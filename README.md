@@ -14,8 +14,7 @@ This software was studied and released [here](http://garethjenkins.com/2012/07/0
 and [here](http://www.reddit.com/r/apple/comments/vi9yf/set_your_retina_macbook_pros_resolution_to/)
 by its original authors. I just improved the build system and Makefile, fixed the icon,
 added support for easy installable package (PKG, DMG) and improved the way menu is
-displayed. I don't know what is the license by its authors because it came 100%
-uncommented and undocumented. But I'm sure they would enjoy you to freely use it. Me too.
+displayed.  I'm sure they would enjoy you to freely use it under the AGPLv3 license. Me too.
 
 Want installable binary package? [It is here](http://avi.alkalay.net/software/RDM/).
 
