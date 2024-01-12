@@ -13,18 +13,18 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Rapid screen resolution switching</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.alkalay.RDM</string>
+	<string>org.targetdisk.RDeeM</string>
 	<key>CFBundleName</key>
-	<string>RDM</string>
+	<string>RDeeM</string>
 	<key>LSUIElement</key>
 	<string>1</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Distributed under GNU General Public License v3.0</string>
+	<string>Distributed under the Affero General Public License v3</string>
 	<key>CFBundleVersion</key>
-	<string>2.2</string>
+	<string>2.4</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2</string>
+	<string>2.4</string>
 </dict>
 </plist>

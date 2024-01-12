@@ -32,11 +32,11 @@
 		{
 			if(refreshRate)
 			{
-				title = [NSString stringWithFormat: @"%d × %d ⚡️, %.0f Hz", width, height, refreshRate];
+				title = [NSString stringWithFormat: @"%d × %d 👁️, %.0f Hz", width, height, refreshRate];
 			}
 			else
 			{
-				title = [NSString stringWithFormat: @"%d × %d ⚡️", width, height];
+				title = [NSString stringWithFormat: @"%d × %d 👁️", width, height];
 			}
 		}
 		else

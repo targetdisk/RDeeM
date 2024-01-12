@@ -129,7 +129,7 @@
 			{
 				if([mainItem scale] == 2.0f)
 				{
-					title = [NSString stringWithFormat: @"%d × %d ⚡️️", [mainItem width], [mainItem height]];
+					title = [NSString stringWithFormat: @"%d × %d 👁️", [mainItem width], [mainItem height]];
 				}
 				else
 				{
@@ -213,7 +213,7 @@
 		[statusMenu addItem: [NSMenuItem separatorItem]];
 	}
 	
-	[statusMenu addItemWithTitle: @"About RDM" action: @selector(showAbout) keyEquivalent: @""];
+	[statusMenu addItemWithTitle: @"About RDeeM" action: @selector(showAbout) keyEquivalent: @""];
 	
 	
 	[statusMenu addItemWithTitle: @"Quit" action: @selector(quit) keyEquivalent: @""];
