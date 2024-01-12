@@ -3,7 +3,7 @@
 PREFIX=/usr/local
 IDENTIFIER=org.targetdisk.RDeeM
 
-VERSION=2.4
+VERSION ?= 2.4
 
 PACKAGE_BUILD = $(shell which pkgbuild)
 #ARCH_FLAGS=-arch x86_64
