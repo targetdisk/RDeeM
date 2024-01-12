@@ -56,4 +56,6 @@ dmg: pkg
 	rm -f RDeeM.dmg
 	ln -s RDeeM-$(VERSION).dmg RDeeM.dmg
 
+all: dmg pkg
+
 .PHONY: pkg dmg build clean all
