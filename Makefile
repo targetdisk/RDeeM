@@ -1,13 +1,12 @@
 #!/usr/bin/env make -f
 
-PREFIX=/usr
-IDENTIFIER=net.alkalay.RDM
+PREFIX=/usr/local
+IDENTIFIER=org.targetdisk.RDM
 
-VERSION=2.2
+VERSION=2.3
 
-CC=llvm-g++
-PACKAGE_BUILD=/usr/bin/pkgbuild
-ARCH_FLAGS=-arch x86_64
+PACKAGE_BUILD = $(shell which pkgbuild)
+#ARCH_FLAGS=-arch x86_64
 
 .PHONY: build
 
@@ -21,8 +20,8 @@ RDM.app: SetResX Resources Info.plist monitor.icns
 	mv monitor.icns RDM.app/Contents/Resources
 
 
-SetResX: main.o SRApplicationDelegate.o ResMenuItem.o cmdline.o utils.o 
-	$(CC) $^ -o $@ $(ARCH_FLAGS) -framework Foundation -framework ApplicationServices -framework AppKit 
+SetResX: main.o SRApplicationDelegate.o ResMenuItem.o cmdline.o utils.o
+	$(CC) $^ -o $@ $(ARCH_FLAGS) -framework CoreGraphics -framework Foundation -framework ApplicationServices -framework AppKit
 
 
 clean:
@@ -57,4 +56,4 @@ dmg: pkg
 	rm -f RDM.dmg
 	ln -s RDM-$(VERSION).dmg RDM.dmg
 
-.PHONY: pkg dmg install build clean
+.PHONY: pkg dmg build clean all
