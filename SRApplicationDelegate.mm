@@ -212,6 +212,8 @@
 		
 		[statusMenu addItem: [NSMenuItem separatorItem]];
 	}
+	[statusMenu addItemWithTitle: @"Detect Displays..." action: @selector(refreshStatusMenu) keyEquivalent: @""];
+	[statusMenu addItem: [NSMenuItem separatorItem]];
 	
 	[statusMenu addItemWithTitle: @"About RDeeM" action: @selector(showAbout) keyEquivalent: @""];
 	
