@@ -67,7 +67,7 @@
 	{
 		if(scale == 2.0f)
 		{
-			title = [NSString stringWithFormat: @"%d × %d ⚡", width, height];
+			title = [NSString stringWithFormat: @"%d × %d 👁️", width, height];
 		}
 		else
 		{
