@@ -3,10 +3,10 @@
 PREFIX=/usr/local
 IDENTIFIER=org.targetdisk.RDeeM
 
-VERSION ?= 2.4
+VERSION ?= 2.5
 
 PACKAGE_BUILD = $(shell which pkgbuild)
-#ARCH_FLAGS=-arch x86_64
+#ARCH_FLAGS=-arch x86_64 -arch arm64
 
 .PHONY: build
 
@@ -29,7 +29,7 @@ clean:
 	rm -f *.o
 	rm -f *icns
 	rm -rf RDeeM.app
-	rm -rf pkgroot dmgroot
+	rm -rf dmgroot dmgroot.pkg pkgroot
 	rm -f *.pkg *.dmg
 
 %.o: %.mm
@@ -41,21 +41,30 @@ clean:
 
 pkg: RDeeM.app
 	mkdir -p pkgroot/Applications
-	mv $< pkgroot/Applications/
+	cp -rv $< pkgroot/Applications/
 	$(PACKAGE_BUILD) --root pkgroot/  --identifier $(IDENTIFIER) \
 		--version $(VERSION) "RDeeM-$(VERSION).pkg"
 	rm -f RDeeM.pkg
 	ln -s RDeeM-$(VERSION).pkg RDeeM.pkg
 
-dmg: pkg
+pkgdmg: pkg
+	mkdir -p dmgroot.pkg
+	cp RDeeM-$(VERSION).pkg dmgroot.pkg/
+	rm -f RDeeM-installer-$(VERSION).dmg
+	hdiutil makehybrid -hfs -hfs-volume-name "RDeeM $(VERSION) Installer" \
+		-o "RDeeM-installer-$(VERSION).dmg" dmgroot.pkg/
+	rm -f RDeeM-installer.dmg
+	ln -s RDeeM-installer--$(VERSION).dmg RDeeM-installer.dmg
+
+dmg: RDeeM.app
 	mkdir -p dmgroot
-	cp RDeeM-$(VERSION).pkg dmgroot/
+	cp -rv $< dmgroot
 	rm -f RDeeM-$(VERSION).dmg
 	hdiutil makehybrid -hfs -hfs-volume-name "RDeeM $(VERSION)" \
 		-o "RDeeM-$(VERSION).dmg" dmgroot/
 	rm -f RDeeM.dmg
 	ln -s RDeeM-$(VERSION).dmg RDeeM.dmg
 
-all: dmg pkg
+all: dmg pkg pkgdmg
 
 .PHONY: pkg dmg build clean all
