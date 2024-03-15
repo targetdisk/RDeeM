@@ -17,6 +17,6 @@ This software was studied and released
 and [here](http://www.reddit.com/r/apple/comments/vi9yf/set_your_retina_macbook_pros_resolution_to/)
 by its original authors. Over the years the community has improved the build
 system and Makefile, fixed the icon, added support for easy installable package
-(PKG, DMG) and improved the way menu is displayed.  I'm sure the original
+(PKG, DMG) and improved the way the menu is displayed.  I'm sure the original
 authors would enjoy you freely using this software under the AGPLv3 license.
 Me too.
